@@ -4,7 +4,12 @@ const SPEED = 300.0
 
 @export var maxHealth: int = 100
 var health: int = 0
-@onready var healthBar = $GUI/healthBar
+@onready var healthBar : ProgressBar = $GUI/healthBar
+
+@export_group("Healthbar")
+@export var green : Color
+@export var red : Color
+
 
 func _ready():
 	health = maxHealth
