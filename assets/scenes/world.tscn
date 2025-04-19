@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2pji7e4i3pss"]
 
-[ext_resource type="PackedScene" uid="uid://be0skj4bede5q" path="res://assets/scenes/Player.tscn" id="1_mr2u7"]
-[ext_resource type="PackedScene" uid="uid://cixp22abgk0yg" path="res://assets/scenes/Enemy.tscn" id="2_ypxwc"]
+[ext_resource type="PackedScene" uid="uid://be0skj4bede5q" path="res://assets/scenes/player.tscn" id="1_mr2u7"]
+[ext_resource type="PackedScene" path="res://assets/scenes/Enemy.tscn" id="2_ypxwc"]
 
 [node name="world" type="Node2D"]
 
@@ -10,4 +10,6 @@ position = Vector2(27, 3)
 
 [node name="Enemy" parent="." instance=ExtResource("2_ypxwc")]
 position = Vector2(316, 78)
-speed = 400
+collision_layer = 2
+collision_mask = 2
+speed = 300.0
