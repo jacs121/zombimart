@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 
 @export var maxHealth: int = 100
-var health: int = 0
+var health: float = 0
 @onready var healthBar : ProgressBar = $GUI/healthBar
 
 @export_group("Healthbar")
@@ -23,11 +23,14 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
+	
+	
 
 	move_and_slide()
 
 func _process(delta):
 	healthBar.set_value(health)
+	healthBar.get("theme_override_styles/fill").bg_color = green.lerp(red, 1-health/maxHealth)
 
 func dealDamage(value: int):
 	health -= value

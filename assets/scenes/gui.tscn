@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://36off8awq8m0"]
+[gd_scene load_steps=2 format=3 uid="uid://bhkycet1874ll"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omdol"]
-bg_color = Color(0, 0.835294, 0.133333, 1)
+bg_color = Color(0.1776, 0.74, 0.1776, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2

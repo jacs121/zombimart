@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://be0skj4bede5q"]
 
-[ext_resource type="Script" uid="uid://bl6r1y6t35ycc" path="res://assets/scripts/player.gd" id="1_k2hn7"]
+[ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_k2hn7"]
 [ext_resource type="Texture2D" uid="uid://bqj8k0tum7gtf" path="res://assets/sprites/player/player.png" id="1_ompul"]
-[ext_resource type="PackedScene" uid="uid://36off8awq8m0" path="res://assets/scenes/gui.tscn" id="3_hhe0d"]
+[ext_resource type="PackedScene" uid="uid://bhkycet1874ll" path="res://assets/scenes/gui.tscn" id="3_hhe0d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yq3aq"]
 height = 50.0
@@ -12,6 +12,8 @@ size = Vector2(20, 49)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_k2hn7")
+green = Color(0, 1, 0, 1)
+red = Color(1, 0, 0, 1)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1

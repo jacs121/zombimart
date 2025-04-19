@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://be0skj4bede5q" path="res://assets/scenes/player.tscn" id="1_mr2u7"]
 [ext_resource type="PackedScene" uid="uid://bvg8sfcv3johy" path="res://assets/scenes/Enemy.tscn" id="2_ypxwc"]
-[ext_resource type="PackedScene" uid="uid://36off8awq8m0" path="res://assets/scenes/gui.tscn" id="3_va6vu"]
+[ext_resource type="PackedScene" uid="uid://bhkycet1874ll" path="res://assets/scenes/gui.tscn" id="3_va6vu"]
 
 [node name="world" type="Node2D"]
 
@@ -13,5 +13,6 @@ position = Vector2(27, 3)
 position = Vector2(316, 78)
 collision_layer = 2
 collision_mask = 2
+attackSpeed = 0.25
 
 [node name="GUI" parent="." instance=ExtResource("3_va6vu")]
