@@ -2,6 +2,12 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
+@export var maxHealth: int = 100
+var health: int
+
+func _ready():
+	health = maxHealth
+
 func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
@@ -14,3 +20,9 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+
+
+
+
+func _on_enemycollision_shape_body_entered(body):
+	pass
