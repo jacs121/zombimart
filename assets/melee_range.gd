@@ -1,9 +1,14 @@
 extends RayCast2D
 
+@export var meleeRange : float
+
 func _input(event):
 	if event is InputEventMouseMotion:
 		var mousePos = get_global_mouse_position()
 		var player : CharacterBody2D = get_parent().get_parent()
-		
-		rotation_degrees = rad_to_deg(atan((mousePos.y - player.position.y)/(mousePos.x - player.position.y)))
-		print(rotation_degrees)
+		var direction = (mousePos - player.position).normalized()
+		var angle = direction.angle()
+		target_position = direction * meleeRange
+		rotation = angle
+		force_raycast_update()
+		print(rad_to_deg(angle))

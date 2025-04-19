@@ -32,6 +32,8 @@ func _ready():
 func _process(delta):
 	if melee:
 		if Input.is_action_just_pressed("damage"):
+			raycast.enabled = true
 			raycast.force_raycast_update()
 			var enemy = raycast.get_collider()
 			print(enemy != null)
+			raycast.enabled = false

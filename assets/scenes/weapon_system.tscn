@@ -16,6 +16,8 @@ melee = true
 [node name="weapon3" type="Node2D" parent="."]
 
 [node name="meleeRange" type="RayCast2D" parent="."]
+enabled = false
 target_position = Vector2(36, 0)
 collision_mask = 5
 script = ExtResource("3_fgp32")
+meleeRange = 16.0
