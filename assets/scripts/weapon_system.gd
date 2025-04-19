@@ -17,8 +17,3 @@ func _input(event):
 		selectedWeaponIndex = fmod(selectedWeaponIndex, len(weaponChilds))
 		print(weaponChilds[selectedWeaponIndex].name)
 		weaponChilds[selectedWeaponIndex].show()
-	if event is InputEventMouseButton:
-		var mousePos = event.position
-		var player = $"."
-		$meleeRange.rotation_degrees = rad_to_deg(((mousePos.y - player.position.y)/(mousePos.x - player.position.y)))
-		print($meleeRange.rotation_degrees)
