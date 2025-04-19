@@ -8,9 +8,9 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.277528, 0.277528, 0.277528, 1)
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="GUI" type="CanvasLayer"]
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="healthBar" type="ProgressBar" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -23,7 +23,6 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/fill = SubResource("StyleBoxFlat_omdol")
-min_value = 100.0
 step = 1.0
 value = 100.0
 rounded = true

@@ -44,4 +44,4 @@ func _process(delta: float) -> void:
 		attackTimer.connect("timeout", dealDamage)
 
 func dealDamage():
-	player.health -= attackDamage
+	player.dealDamage(attackDamage)

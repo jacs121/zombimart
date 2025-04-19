@@ -1,6 +1,5 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvg8sfcv3johy"]
 
-[ext_resource type="Script" uid="uid://bv6w1e7vduc7m" path="res://assets/scenes/enemy.gd" id="1_xw4f6"]
 [ext_resource type="Script" path="res://assets/scripts/enemy.gd" id="1_mba16"]
 [ext_resource type="Texture2D" uid="uid://lwnqo4lv4s7r" path="res://assets/sprites/zombie_prototype.png" id="1_yuf53"]
 
