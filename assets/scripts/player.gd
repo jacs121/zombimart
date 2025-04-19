@@ -20,9 +20,3 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
-
-
-
-
-func _on_enemycollision_shape_body_entered(body):
-	pass

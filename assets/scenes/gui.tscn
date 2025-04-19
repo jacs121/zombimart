@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhkycet1874ll"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omdol"]
+bg_color = Color(0.1776, 0.74, 0.1776, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.277528, 0.277528, 0.277528, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -437.0
+offset_top = -54.0
+offset_right = 437.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_omdol")
+min_value = 100.0
+step = 1.0
+value = 100.0
+rounded = true
+show_percentage = false
