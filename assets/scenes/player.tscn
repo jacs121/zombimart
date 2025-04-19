@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://be0skj4bede5q"]
+[gd_scene load_steps=7 format=3 uid="uid://be0skj4bede5q"]
 
 [ext_resource type="Script" path="res://assets/scripts/player.gd" id="1_k2hn7"]
 [ext_resource type="Texture2D" uid="uid://bqj8k0tum7gtf" path="res://assets/sprites/player/player.png" id="1_ompul"]
 [ext_resource type="PackedScene" uid="uid://bhkycet1874ll" path="res://assets/scenes/gui.tscn" id="3_hhe0d"]
+[ext_resource type="PackedScene" uid="uid://cy2q1ttnvh7ts" path="res://assets/scenes/weapon_system.tscn" id="4_lylxy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yq3aq"]
 height = 50.0
@@ -34,5 +35,7 @@ shape = SubResource("RectangleShape2D_f2ebt")
 position_smoothing_enabled = true
 
 [node name="GUI" parent="." instance=ExtResource("3_hhe0d")]
+
+[node name="weaponSystem" parent="." instance=ExtResource("4_lylxy")]
 
 [connection signal="body_entered" from="enemycollisionShape" to="." method="_on_enemycollision_shape_body_entered"]
