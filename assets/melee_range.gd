@@ -9,6 +9,5 @@ func _input(event):
 		var direction = (mousePos - player.position).normalized()
 		var angle = direction.angle()
 		target_position = direction * meleeRange
-		rotation = angle
 		force_raycast_update()
 		print(rad_to_deg(angle))
