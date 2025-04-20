@@ -29,6 +29,9 @@ func _physics_process(delta):
 func _process(delta):
 	healthBar.set_value(health)
 	healthBar.get("theme_override_styles/fill").bg_color = green.lerp(red, 1-health/maxHealth)
+	if health == 0:
+		hide()
+		get_tree().create_timer(1).connect("timeout", get_tree().reload_current_scene)
 
 func dealDamage(value: int):
 	health -= value
