@@ -10,6 +10,7 @@ script = ExtResource("1_ulwia")
 [node name="weapon1" type="Node2D" parent="."]
 script = ExtResource("2_orew0")
 melee = true
+meleeKnockback = 1456
 
 [node name="weapon2" type="Node2D" parent="."]
 
