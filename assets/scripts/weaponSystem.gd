@@ -32,8 +32,14 @@ func _ready():
 func _process(delta):
 	if melee:
 		if Input.is_action_just_pressed("damage"):
-			raycast.enabled = true
+			#raycast.enabled = true
+			var mousePos = get_global_mouse_position()
+			var player : CharacterBody2D = get_parent().get_parent()
+			var direction = (mousePos - player.position).normalized()
+			var angle = direction.angle()
+			raycast.target_position = direction * meleeRange
 			raycast.force_raycast_update()
 			var enemy = raycast.get_collider()
-			print(enemy != null)
-			raycast.enabled = false
+			if enemy:
+				enemy.cancel_free()
+			#raycast.enabled = false

@@ -19,8 +19,6 @@ var attackTimer
 
 func _ready() -> void:
 	attackTimer = get_tree().create_timer(0)
-	if player != null:
-		print("FOUND PLAYER")
 
 func _physics_process(delta: float) -> void:
 	if ai:
