@@ -52,8 +52,9 @@ func dealDamage():
 		player.dealDamage(attackDamage)
 
 func damageSelf(amount, knockback: float):
-	health += amount
+	health -= amount
 	velocity = (position - player.position).normalized() * knockback / knockbackEffect
-	if health < 0:
+	if health <= 0:
 		ai = false
-		attackTimer = get_tree().create_timer(attackSpeed).connect("timeout", cancel_free)
+		var death_timer = get_tree().create_timer(1)
+		death_timer.connect("timeout", queue_free)
