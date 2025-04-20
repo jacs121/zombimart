@@ -7,7 +7,10 @@ var selectedWeaponIndex = 0
 func _ready():
 	weaponChilds = get_children()
 	for weaponChild in weaponChilds:
-		weaponChild.hide()
+		if weaponChild.get_class() == "Node2D":
+			weaponChild.hide()
+		else:
+			weaponChilds.erase(weaponChild)
 	weaponChilds[0].show()
 
 func _input(event):

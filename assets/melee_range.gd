@@ -10,4 +10,3 @@ func _input(event):
 		var angle = direction.angle()
 		target_position = direction * meleeRange
 		force_raycast_update()
-		print(rad_to_deg(angle))

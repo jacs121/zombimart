@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var ai : bool = true
 @export_group("movement")
-@export var speed : float = 300.0
+@export var speed : float = 275.0
 @export var sight : float = 2000.0
 @export var slow_down_sight : float = 150.0
 
@@ -47,4 +47,5 @@ func _process(delta: float) -> void:
 			attackTimer.connect("timeout", dealDamage)
 
 func dealDamage():
-	player.dealDamage(attackDamage)
+	if position.distance_to(player_pos) <= attackRange and attackTimer.time_left == 0:
+		player.dealDamage(attackDamage)
