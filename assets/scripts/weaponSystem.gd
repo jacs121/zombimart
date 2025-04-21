@@ -7,21 +7,23 @@ extends Node2D
 @export var rangeCooldown: float = 0
 @export var explosiveCooldown: float = 0
 @onready var player = $"."
+@onready var raycast:RayCast2D = $"../raycast"
 
 @export_group("melee")
 @export var melee: bool = false
 @export var meleeDamage: int = 0
 @export var meleeRange: int = 36
 @export var meleeKnockback: int = 0
-@onready var raycast:RayCast2D = $"../meleeRange"
 
 @export_group("range")
 @export var range: bool = false
+@export var bulletTexture: Texture2D
 @export var rangeDamage: int
 @export var rangeSpeed: float
 
 @export_group("explosive")
 @export var explosive: bool = false
+@export var explosiveTexture: Texture2D
 enum _explosiveTypes {place, throw, lounch}
 @export var explosiveType: _explosiveTypes = _explosiveTypes.place
 @export var explodeTimer: float = -1

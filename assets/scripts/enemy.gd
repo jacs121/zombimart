@@ -18,6 +18,7 @@ extends CharacterBody2D
 var player_pos
 var target_pos
 var attackTimer
+var damageIndicator = 0
 
 @onready var player = $"../Player"
 
@@ -39,6 +40,13 @@ func _physics_process(delta: float) -> void:
 	velocity /= 1.25
 
 func _process(delta: float) -> void:
+	modulate.g8 = 255-damageIndicator*255
+	modulate.b8 = 255-damageIndicator*255
+	if damageIndicator > 0.00001:
+		damageIndicator /= 1 + delta*1.5
+		print(damageIndicator)
+	else:
+		damageIndicator = 0
 	if ai:
 		player_pos = player.position
 		target_pos = (player_pos - position).normalized()
@@ -58,3 +66,4 @@ func damageSelf(amount, knockback: float):
 		ai = false
 		var death_timer = get_tree().create_timer(1)
 		death_timer.connect("timeout", queue_free)
+	damageIndicator = 1
