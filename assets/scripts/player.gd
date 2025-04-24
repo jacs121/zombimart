@@ -16,7 +16,6 @@ func _ready():
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_vector("left", "right", "up", "down").normalized()
 	if direction:
 		velocity = direction * SPEED
@@ -27,11 +26,12 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	healthBar.set_value(health)
-	healthBar.get("theme_override_styles/fill").bg_color = green.lerp(red, 1-health/maxHealth)
+	healthBar.set_value(health) # set the helath bar to match the health of the player
+	healthBar.get("theme_override_styles/fill").bg_color = green.lerp(red, 1-health/maxHealth) # set the color of the health bar from green to red (from 100 hp to 0hp)
+	# reset the scene one second after the player's health gets to 0
 	if health == 0:
 		hide()
 		get_tree().create_timer(1).connect("timeout", get_tree().reload_current_scene)
 
-func dealDamage(value: int):
+func dealDamage(value: int): # damage the player
 	health -= value

@@ -5,18 +5,19 @@ var selectedWeaponIndex = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	weaponChilds = get_children()
+	weaponChilds = get_children() # put all the weapon objects in a list
+	# loop over the weapons
 	for weaponChild in weaponChilds:
 		if weaponChild.get_class() == "Node2D":
-			weaponChild.hide()
+			weaponChild.hide() # if it's a weapon hide it
 		else:
-			weaponChilds.erase(weaponChild)
-	weaponChilds[0].show()
+			weaponChilds.erase(weaponChild) # if it's not remove it from the weapons list
+	weaponChilds[0].show() # show the first weapon
 
 func _input(event):
-	if Input.get_axis("next_weapon", "previous_weapon") != 0:
-		weaponChilds[selectedWeaponIndex].hide()
-		selectedWeaponIndex += Input.get_axis("next_weapon", "previous_weapon")
-		selectedWeaponIndex = fmod(selectedWeaponIndex, len(weaponChilds))
-		print(weaponChilds[selectedWeaponIndex].name)
-		weaponChilds[selectedWeaponIndex].show()
+	if Input.get_axis("next_weapon", "previous_weapon") != 0: # check if the mouse wheel is moved
+		weaponChilds[selectedWeaponIndex].hide() # hide the current weapon
+		selectedWeaponIndex += Input.get_axis("next_weapon", "previous_weapon") # add 1 or -1 depending on if it's mouse wheel up or down
+		selectedWeaponIndex = fmod(selectedWeaponIndex, len(weaponChilds)) # loop it in the range of the weapons list
+		print(weaponChilds[selectedWeaponIndex].name) # debug
+		weaponChilds[selectedWeaponIndex].show() # show the new weapon

@@ -6,7 +6,6 @@ extends Node2D
 @export var meleeCooldown: float = 0
 @export var rangeCooldown: float = 0
 @export var explosiveCooldown: float = 0
-@onready var player = $"."
 @onready var raycast:RayCast2D = $"../raycast"
 
 @export_group("melee")
@@ -34,24 +33,28 @@ func _ready():
 
 func _process(delta):
 	if melee:
-		if Input.is_action_just_pressed("melee"):
-			var mousePos = get_global_mouse_position()
-			var player : CharacterBody2D = get_parent().get_parent()
+		if Input.is_action_just_pressed("melee"): # when player presses the "melee" key
+			var mousePos = get_global_mouse_position() # get mouse pos on the screen
+			var player : CharacterBody2D = get_parent().get_parent() # get the player character
+			# calculate the angle of the mouse from the player
 			var direction = (mousePos - player.position).normalized()
-			var angle = direction.angle()
-			raycast.target_position = direction * meleeRange
-			raycast.force_raycast_update()
-			var enemy = raycast.get_collider()
+
+			raycast.target_position = direction * meleeRange # set the target position to the melee range in the diraction of the mouse
+			raycast.force_raycast_update() # shoot a ray
+			var enemy = raycast.get_collider() # get collided object (or none)
+			# if hit an enemy damage it
 			if enemy:
 				enemy.damageSelf(meleeDamage, meleeKnockback)
-	if melee:
-		if Input.is_action_just_pressed("shoot"):
-			var mousePos = get_global_mouse_position()
-			var player : CharacterBody2D = get_parent().get_parent()
+	if range:
+		if Input.is_action_just_pressed("shoot"): # when player presses the "shoot" key
+			var mousePos = get_global_mouse_position() # get mouse pos on the screen
+			var player : CharacterBody2D = get_parent().get_parent() # get the player character
+			# calculate the angle of the mouse from the player
 			var direction = (mousePos - player.position).normalized()
-			var angle = direction.angle()
-			raycast.target_position = direction * 9999
-			raycast.force_raycast_update()
-			var enemy = raycast.get_collider()
+
+			raycast.target_position = direction * 9999 # set the target position for a far range
+			raycast.force_raycast_update() # shoot a ray
+			var enemy = raycast.get_collider() # get collided object (or none)
+			# if hit an enemy damage it
 			if enemy:
 				enemy.damageSelf(rangeDamage, 0)
