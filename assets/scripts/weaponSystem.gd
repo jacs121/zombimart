@@ -20,14 +20,6 @@ extends Node2D
 @export var rangeDamage: int
 @export var rangeSpeed: float
 
-@export_group("explosive")
-@export var explosive: bool = false
-@export var explosiveTexture: Texture2D
-enum _explosiveTypes {place, throw, lounch}
-@export var explosiveType: _explosiveTypes = _explosiveTypes.place
-@export var explodeTimer: float = -1
-@export var explodeOnCollision: bool = false
-
 func _ready():
 	pass
 
