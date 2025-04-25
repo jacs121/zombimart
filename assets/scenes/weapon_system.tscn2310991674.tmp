@@ -5,9 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://b6jfl6fljwec1" path="res://assets/scenes/projectile.tscn" id="3_0dpjg"]
 [ext_resource type="Script" uid="uid://d1dlsxiq5udck" path="res://assets/melee_range.gd" id="3_fgp32"]
 
-[node name="weaponsSystem" type="Node2D" node_paths=PackedStringArray("rayCast")]
+[node name="weaponsSystem" type="Node2D"]
 script = ExtResource("1_ulwia")
-rayCast = NodePath("raycast")
 
 [node name="punch" type="Node2D" parent="."]
 script = ExtResource("2_orew0")
@@ -20,7 +19,6 @@ script = ExtResource("2_orew0")
 range = true
 rangeProjectile = ExtResource("3_0dpjg")
 rangeDamage = 100
-rangeSpeed = 10.0
 
 [node name="weapon3" type="Node2D" parent="."]
 script = ExtResource("2_orew0")
