@@ -44,7 +44,7 @@ func _process(delta):
 				# calculate the angle of the mouse from the player
 				var direction = (mousePos - player.position).normalized()
 				var projectile: Node2D = rangeProjectile.instantiate()
-				projectile.position = direction
+				projectile.global_position = player.position
 				projectile.setDirection(direction, rangeSpeed)
 				$"..".add_child(projectile)
 
