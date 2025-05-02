@@ -1,6 +1,6 @@
 extends Line2D
 
-@export var maxLength: int = 10
+@export var maxLength: int = 100
 var queue: Array
 
 func _process(delta):

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://chkjk5tgwuv0b"]
 
-[ext_resource type="Script" uid="uid://cxr8laj6mvo2p" path="res://assets/scripts/weapon_system.gd" id="1_ulwia"]
-[ext_resource type="Script" uid="uid://cxqb1tynvxrt" path="res://assets/scripts/weaponSystem.gd" id="2_orew0"]
-[ext_resource type="PackedScene" uid="uid://b6jfl6fljwec1" path="res://assets/scenes/projectile.tscn" id="3_0dpjg"]
+[ext_resource type="Script" uid="uid://cxr8laj6mvo2p" path="res://assets/scripts/weaponSelectionSystem.gd" id="1_ulwia"]
+[ext_resource type="Script" uid="uid://cxqb1tynvxrt" path="res://assets/scripts/weaponsSystem.gd" id="2_orew0"]
+[ext_resource type="PackedScene" uid="uid://b6jfl6fljwec1" path="res://assets/scenes/projectileRoot.tscn" id="3_0dpjg"]
 [ext_resource type="Script" uid="uid://d1dlsxiq5udck" path="res://assets/melee_range.gd" id="3_fgp32"]
 
 [node name="weaponsSystem" type="Node2D" node_paths=PackedStringArray("rayCast")]

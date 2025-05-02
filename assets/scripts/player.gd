@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
 
-@export var maxHealth: int = 100
+
+@export_group("movement")
+@export var canMove: bool = true
+@export var SPEED: float = 300.0
+
+
+@export_group("Health")
 var health: float = 0
+@export var maxHealth: int = 100
 @onready var healthBar : ProgressBar = $GUI/healthBar
-
-@export_group("Healthbar")
 @export var green : Color
 @export var red : Color
 
@@ -16,7 +20,7 @@ func _ready():
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
-	var direction = Input.get_vector("left", "right", "up", "down").normalized()
+	var direction = Input.get_vector("left", "right", "up", "down").normalized() * int(canMove)
 	if direction:
 		velocity = direction * SPEED
 	else:

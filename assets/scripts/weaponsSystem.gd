@@ -45,10 +45,6 @@ func _process(delta):
 				var direction = (mousePos - player.position).normalized()
 				var projectile: Node2D = rangeProjectile.instantiate()
 				projectile.global_position = player.position
+				projectile.damage = rangeDamage
 				projectile.setDirection(direction, rangeSpeed)
 				$"..".add_child(projectile)
-
-				var enemy = raycast.get_collider() # get collided object (or none)
-				# if hit an enemy damage it
-				if enemy:
-					enemy.damageSelf(rangeDamage, 0)

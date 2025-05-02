@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6jfl6fljwec1"]
+
+[ext_resource type="Script" uid="uid://cml028uw1b7p8" path="res://assets/scripts/projectile.gd" id="1_bbhav"]
+[ext_resource type="Script" uid="uid://2i42mp8geyl0" path="res://assets/scripts/trail.gd" id="2_60b5u"]
+
+[sub_resource type="Curve" id="Curve_uxq6y"]
+_data = [Vector2(0.617021, 0.52809), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Gradient" id="Gradient_uxq6y"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_scc3m"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbhav"]
+
+[node name="projectileRoot" type="Node2D"]
+script = ExtResource("1_bbhav")
+speed = 10.0
+killActionTime = 1000.0
+
+[node name="Line" type="Line2D" parent="."]
+position = Vector2(243, 136)
+points = PackedVector2Array(1, 2)
+closed = true
+width_curve = SubResource("Curve_uxq6y")
+gradient = SubResource("Gradient_uxq6y")
+script = ExtResource("2_60b5u")
+maxLength = 20
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_scc3m")
+
+[node name="hit" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit"]
+shape = SubResource("RectangleShape2D_bbhav")
+
+[node name="wall" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+shape = SubResource("RectangleShape2D_bbhav")
+
+[connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]
