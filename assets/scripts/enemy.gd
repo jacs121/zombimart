@@ -46,7 +46,6 @@ func _process(delta: float) -> void:
 	modulate.b8 = 255-damageIndicator*255
 	if damageIndicator > 0.00001:
 		damageIndicator /= 1 + delta*1.5
-		print(damageIndicator)
 	else:
 		damageIndicator = 0
 	if ai:

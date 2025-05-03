@@ -19,7 +19,7 @@ meleeKnockback = 50
 script = ExtResource("2_orew0")
 range = true
 rangeProjectile = ExtResource("3_0dpjg")
-rangeDamage = 100
+rangeDamage = 10
 rangeSpeed = 10.0
 
 [node name="weapon3" type="Node2D" parent="."]

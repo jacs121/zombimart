@@ -33,7 +33,6 @@ func setDirection(_direction, _speed):
 	direction = _direction*10
 	global_position += direction
 	speed = _speed
-	damage = 5
 
 func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	if area.is_in_group("enemy"):
