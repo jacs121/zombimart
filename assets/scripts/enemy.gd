@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Enemy
+
 @export_group("status")
 @export var ai : bool = true
 @export var health : int  = 100
