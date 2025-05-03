@@ -1,15 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6jfl6fljwec1"]
+[gd_scene load_steps=4 format=3 uid="uid://b6jfl6fljwec1"]
 
-[ext_resource type="Script" uid="uid://cml028uw1b7p8" path="res://assets/scripts/projectile.gd" id="1_bbhav"]
-[ext_resource type="Script" uid="uid://2i42mp8geyl0" path="res://assets/scripts/trail.gd" id="2_60b5u"]
+[ext_resource type="Script" uid="uid://cml028uw1b7p8" path="res://assets/scripts/projectileSystemRoot.gd" id="1_bbhav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbhav"]
-
-[sub_resource type="Curve" id="Curve_uxq6y"]
-_data = [Vector2(0.617021, 0.52809), 0.0, 0.0, 0, 0]
-point_count = 1
-
-[sub_resource type="Gradient" id="Gradient_uxq6y"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_scc3m"]
 size = Vector2(10, 10)
@@ -24,15 +17,6 @@ damage = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bbhav")
-
-[node name="Line" type="Line2D" parent="."]
-position = Vector2(243, 136)
-points = PackedVector2Array(1, 2)
-closed = true
-width_curve = SubResource("Curve_uxq6y")
-gradient = SubResource("Gradient_uxq6y")
-script = ExtResource("2_60b5u")
-maxLength = 20
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_scc3m")

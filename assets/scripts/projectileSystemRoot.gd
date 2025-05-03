@@ -8,12 +8,17 @@ var direction = Vector2.ZERO
 @export var texture: Texture2D
 @export var damage: int
 
+@export var usable: bool = true
+
 var killAction : Callable
 var hitAction : Callable
+var onUseAction : Callable
 
 func _ready() -> void:
 	var timer = get_tree().create_timer(killActionTime)
 	timer.connect("timeout", kill)
+	if onUseAction:
+		onUseAction.call()
 
 func kill() -> void:
 	if killAction:
@@ -25,9 +30,6 @@ func _process(delta):
 	global_position += direction * delta * speed
 	if texture:
 		$Sprite.texture = texture
-
-
-
 
 func setDirection(_direction, _speed):
 	direction = _direction*10
