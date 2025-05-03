@@ -3,8 +3,6 @@ class_name Weapon
 
 @export_group("weapon")
 @export var weaponName: String
-@export var cooldownLib: Dictionary[String, float] = {"melee": 0.0, "range": 0.0}
-@export var cooldown: Dictionary[String, float] = {"melee": 0.0, "range": 0.0}
 
 @onready var raycast:RayCast2D = $"../raycast"
 
@@ -16,8 +14,6 @@ func getMouseDirection():
 
 
 func attack(range: float, callbackHit: Callable):
-	if visible == false:
-		return "not in use"
 	# calculate the angle of the mouse from the player
 	var direction = getMouseDirection()
 

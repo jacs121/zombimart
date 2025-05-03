@@ -40,5 +40,4 @@ func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, 
 	if area.is_in_group("enemy"):
 		if area.get_parent().has_method("damageSelf"):
 			area.get_parent().damageSelf(damage, 0)
-			print("Hit A Baddie For " + str(damage) + " dmg")
 			queue_free()

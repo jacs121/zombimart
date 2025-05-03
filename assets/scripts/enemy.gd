@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 		if position.distance_to(player_pos) <= slow_down_sight:
 			velocity.x = target_pos.x * speed * 0.8
 			velocity.y = target_pos.y * speed * 0.8
+
 		elif position.distance_to(player_pos) <= sight:
 			velocity.x = target_pos.x * speed
 			velocity.y = target_pos.y * speed
