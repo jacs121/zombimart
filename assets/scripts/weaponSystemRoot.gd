@@ -12,7 +12,6 @@ func _ready():
 func getMouseDirection(): 
 	return (get_global_mouse_position() - get_parent().get_parent().position).normalized()
 
-
 func attack(range: float, callbackHit: Callable):
 	# calculate the angle of the mouse from the player
 	var direction = getMouseDirection()

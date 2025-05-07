@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-
-
 @export_group("movement")
 @export var canMove: bool = true
 @export var SPEED: float = 300.0
@@ -13,6 +11,8 @@ var health: float = 0
 @onready var healthBar : ProgressBar = $GUI/healthBar
 @export var green : Color
 @export var red : Color
+
+var damageIndicator = 0
 
 
 func _ready():
@@ -30,6 +30,12 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
+	modulate.g8 = 255-damageIndicator*255
+	modulate.b8 = 255-damageIndicator*255
+	if damageIndicator > 0.00001:
+		damageIndicator /= 1 + delta*1.5
+	else:
+		damageIndicator = 0
 	healthBar.set_value(health) # set the helath bar to match the health of the player
 	healthBar.get("theme_override_styles/fill").bg_color = green.lerp(red, 1-health/maxHealth) # set the color of the health bar from green to red (from 100 hp to 0hp)
 	# reset the scene one second after the player's health gets to 0
@@ -39,3 +45,4 @@ func _process(delta):
 
 func dealDamage(value: int): # damage the player
 	health -= value
+	damageIndicator = 1
