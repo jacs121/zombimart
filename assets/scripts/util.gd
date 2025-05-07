@@ -3,7 +3,7 @@ extends Node2D
 
 func _input(event):
 	if event.is_action_pressed("activate"):
-		explotion(10, 1, get_global_mouse_position())
+		explotion(100, 1, get_global_mouse_position())
 		print("self")
 
 func explotion(radius: float, damage:int, _position: Vector2):
