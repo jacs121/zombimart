@@ -11,7 +11,7 @@ height = 50.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2ebt"]
 size = Vector2(20, 49)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_k2hn7")
 green = Color(0, 1, 0, 1)
 red = Color(1, 0, 0, 1)

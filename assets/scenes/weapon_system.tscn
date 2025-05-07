@@ -10,11 +10,11 @@ rayCast = NodePath("raycast")
 
 [node name="punch" type="Node2D" parent="."]
 script = ExtResource("2_6v57d")
+weaponName = "punch"
 
 [node name="gun" type="Node2D" parent="."]
 script = ExtResource("3_fgp32")
-
-[node name="weapon3" type="Node2D" parent="."]
+weaponName = "gun"
 
 [node name="raycast" type="RayCast2D" parent="."]
 target_position = Vector2(0, 0)

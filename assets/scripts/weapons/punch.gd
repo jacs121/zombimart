@@ -1,9 +1,5 @@
 extends Weapon
 
-func _ready():
-	weaponName = "Punch"
-
-
 func _input(event):
 	if visible == false:
 		return
