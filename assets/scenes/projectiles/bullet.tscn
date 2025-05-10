@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://covel86m5yc8v"]
+[gd_scene load_steps=2 format=3 uid="uid://b4dgc1oh0h60p"]
 
 [ext_resource type="PackedScene" uid="uid://b6jfl6fljwec1" path="res://assets/scenes/utils/projectileRoot.tscn" id="1_doafv"]
 
-[node name="projectileRoot" instance=ExtResource("1_doafv")]
+[node name="projectileRoot2" instance=ExtResource("1_doafv")]
 speed = 300.0
 killActionTime = 2.0
 damage = 10

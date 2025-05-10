@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://chkjk5tgwuv0b"]
+[gd_scene load_steps=3 format=3 uid="uid://chkjk5tgwuv0b"]
 
 [ext_resource type="Script" uid="uid://cxr8laj6mvo2p" path="res://assets/scripts/weaponSelectionSystem.gd" id="1_ulwia"]
 [ext_resource type="Script" uid="uid://dtiv8u3eepi1c" path="res://assets/scripts/weapons/punch.gd" id="2_6v57d"]
-[ext_resource type="Script" uid="uid://54bxod5jylaw" path="res://assets/scripts/weapons/gun.gd" id="3_fgp32"]
 
 [node name="weaponsSystem" type="Node2D" node_paths=PackedStringArray("rayCast")]
 script = ExtResource("1_ulwia")
@@ -11,10 +10,6 @@ rayCast = NodePath("raycast")
 [node name="punch" type="Node2D" parent="."]
 script = ExtResource("2_6v57d")
 weaponName = "punch"
-
-[node name="gun" type="Node2D" parent="."]
-script = ExtResource("3_fgp32")
-weaponName = "gun"
 
 [node name="raycast" type="RayCast2D" parent="."]
 target_position = Vector2(0, 0)
