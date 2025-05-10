@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6jfl6fljwec1"]
 
-[ext_resource type="Script" uid="uid://cml028uw1b7p8" path="res://assets/scripts/projectileSystemRoot.gd" id="1_bbhav"]
+[ext_resource type="Script" uid="uid://cml028uw1b7p8" path="res://assets/scripts/projectileSystemRoot.gd" id="1_k0noh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbhav"]
 
@@ -10,7 +10,7 @@ size = Vector2(10, 10)
 [node name="projectileRoot" type="Area2D" groups=["projectile"]]
 collision_layer = 8
 collision_mask = 8
-script = ExtResource("1_bbhav")
+script = ExtResource("1_k0noh")
 damage = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
