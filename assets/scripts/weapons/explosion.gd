@@ -17,6 +17,7 @@ func disableCollision():
 	set_collision_mask_value(4, 0)
 
 func _ready():
+	$ExplosinAnimation.global_position = global_position
 	get_tree().create_timer(0.075).timeout.connect(disableCollision)
 	$ExplosinAnimation.animation_finished.connect(queue_free)
 	$ExplosinAnimation.scale = Vector2($CollisionShape2D.shape.radius/28,$CollisionShape2D.shape.radius/28)

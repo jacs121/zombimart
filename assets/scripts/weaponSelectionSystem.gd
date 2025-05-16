@@ -17,7 +17,7 @@ func _ready():
 	weaponChilds[0].visible = true # show the first weapon
 
 func _input(event):
-	if Input.get_axis("next_weapon", "previous_weapon") != 0: # check if the mouse wheel is moved
+	if Input.get_axis("next_weapon", "previous_weapon") != 0 and get_parent().canMove: # check if the mouse wheel is moved
 		weaponChilds[selectedWeaponIndex].visible = false # hide the current weapon
 		selectedWeaponIndex += Input.get_axis("next_weapon", "previous_weapon") # add 1 or -1 depending on if it's mouse wheel up or down
 		selectedWeaponIndex = fmod(selectedWeaponIndex, len(weaponChilds)) # loop it in the range of the weapons list
