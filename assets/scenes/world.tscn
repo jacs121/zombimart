@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2pji7e4i3pss"]
+[gd_scene load_steps=6 format=3 uid="uid://b2pji7e4i3pss"]
 
 [ext_resource type="Script" uid="uid://dej7xn4gjs25b" path="res://assets/scripts/util.gd" id="1_0moxn"]
 [ext_resource type="PackedScene" uid="uid://be0skj4bede5q" path="res://assets/scenes/player.tscn" id="1_mr2u7"]
 [ext_resource type="PackedScene" uid="uid://bvg8sfcv3johy" path="res://assets/scenes/Enemy.tscn" id="2_ypxwc"]
 [ext_resource type="PackedScene" uid="uid://bhkycet1874ll" path="res://assets/scenes/gui.tscn" id="3_va6vu"]
+[ext_resource type="PackedScene" uid="uid://caaaspilqvphi" path="res://assets/scenes/projectiles/Toy Store/ToyCarWeapon.tscn" id="5_vu0c7"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_0moxn")
@@ -20,3 +21,6 @@ sight = 500.0
 position = Vector2(27, 3)
 
 [node name="GUI" parent="." instance=ExtResource("3_va6vu")]
+
+[node name="ToyCarWeapon" parent="." instance=ExtResource("5_vu0c7")]
+position = Vector2(119, 99)

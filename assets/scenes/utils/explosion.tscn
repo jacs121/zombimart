@@ -130,6 +130,7 @@ script = ExtResource("1_lei66")
 shape = SubResource("CircleShape2D_klmc0")
 
 [node name="ExplosinAnimation" type="AnimatedSprite2D" parent="."]
+top_level = true
 z_index = 99
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lei66")

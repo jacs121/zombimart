@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export_group("movement")
 @export var canMove: bool = true
 @export var SPEED: float = 300.0

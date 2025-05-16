@@ -1,14 +1,10 @@
 extends Node2D
 
+class_name Utils
 
-func _input(event):
-	if event.is_action_pressed("activate"):
-		explotion(100, 1, get_global_mouse_position())
-		print("self")
-
-func explotion(radius: float, damage:int, _position: Vector2):
-	var explotionArea = preload("res://assets/scenes/utils/explosion.tscn").instantiate()
-	explotionArea.get_children()[0].shape.radius = radius
-	explotionArea.global_position = _position
-	self.add_child(explotionArea)
-	explotionArea.damage = damage
+func explosion(radius: float, damage: int, _position: Vector2):
+	var explosion_area = preload("res://assets/scenes/utils/explosion.tscn").instantiate()
+	explosion_area.get_children()[0].shape.radius = radius
+	explosion_area.global_position = _position
+	explosion_area.damage = damage
+	call_deferred("add_child", explosion_area)
