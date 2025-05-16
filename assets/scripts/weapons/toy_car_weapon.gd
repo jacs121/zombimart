@@ -15,6 +15,8 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 
 	player.canMove = false
+	player.get_node("Camera").enabled = false
+	$carCamera.enabled = true
 
 	get_tree().create_timer(explosionTime).timeout.connect(_Destroy)
 
@@ -31,6 +33,8 @@ func _physics_process(delta: float) -> void:
 
 func _Destroy() -> void:
 	player.canMove = true
+	player.get_node("Camera").enabled = true
+	$carCamera.enabled = false
 	get_tree().current_scene.explosion(size*1.5, damage, global_position)
 	queue_free()
 
